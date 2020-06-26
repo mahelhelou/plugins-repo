@@ -17,18 +17,34 @@ function explugin_validate_options( $input ) {
     $input['wpfri_status'] = esc_url( $input['wpfri_status'] );
   }
 
-  // custom style
+  // reactions position
   $radio_options = array(
-    'enable'  => 'Enable custom style',
-    'disable' => 'Disable custom style'
+    'above_title'   => __( 'Above Post Title', 'wp-facebook-reaction-icons' ),
+    'below_title'   => __( 'Below Post Title', 'wp-facebook-reaction-icons' ),
+    'after_content' => __( 'After Post Content', 'wp-facebook-reaction-icons' )
   );
 
-  if ( ! isset( $input['custom_style'] ) ) {
-    $input['custom_style'] = null;
+  if ( ! isset( $input['wpfri_reactions_position'] ) ) {
+    $input['wpfri_reactions_position'] = null;
   }
 
-  if ( ! array_key_exists( $input['custom_style'], $radio_options ) ) {
-    $input['custom_style'] = null;
+  if ( ! array_key_exists( $input['wpfri_reactions_position'], $radio_options ) ) {
+    $input['wpfri_reactions_position'] = null;
+  }
+
+  // icons size
+  $radio_options = array(
+    'small'   => __( 'Small', 'wp-facebook-reaction-icons' ),
+    'medium'  => __( 'Medium', 'wp-facebook-reaction-icons' ),
+    'large'   => __( 'Large', 'wp-facebook-reaction-icons' )
+  );
+
+  if ( ! isset( $input['wpfri_icons_size'] ) ) {
+    $input['wpfri_icons_size'] = null;
+  }
+
+  if ( ! array_key_exists( $input['wpfri_icons_size'], $radio_options ) ) {
+    $input['wpfri_icons_size'] = null;
   }
 
   // custom message

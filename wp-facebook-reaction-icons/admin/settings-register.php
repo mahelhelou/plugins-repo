@@ -27,80 +27,44 @@ function wpfri_register_settings() {
     'wpfri',
     'wpfri_settings',
     [
-      'id'    => 'status',
+      'id'    => 'wpfri_status',
       'label' => __( 'Turn plugin on or off', 'wp-facebook-reaction-icons' )
     ]
   );
 
   add_settings_field(
-    'reactions_position',
-    __( 'Reactions position', 'wp-facebook-reaction-icons' ),
-    'wpfri_callback_field_text',
-    'wpfri',
-    'wpfri_section_login',
-    [
-      'id'    => 'custom_title',
-      'label' => __( 'Custom title attribute for the logo link', 'wpfri' )
-    ]
-  );
-
-  add_settings_field(
-    'custom_style',
-    __( 'Custom Style', 'wpfri' ),
+    'wpfri_reactions_position',
+    __( 'Reactions Position', 'wp-facebook-reaction-icons' ),
     'wpfri_callback_field_radio',
     'wpfri',
-    'wpfri_section_login',
+    'wpfri_settings',
     [
-      'id'    => 'custom_style',
-      'label' => __( 'Custom CSS for login screen', 'wpfri' )
+      'id'    => 'wpfri_reactions_position',
+      'label' => __( 'Where you want to put the reactions in the page?' )
     ]
   );
 
   add_settings_field(
-    'custom_message',
-    __( 'Custom Message', 'wpfri' ),
-    'wpfri_callback_field_textarea',
+    'wpfri_icons_to_display',
+    __( 'Choose Reactions in Your Site', 'wp-facebook-reaction-icons' ),
+    'wpfri_callback_field_post_types',
     'wpfri',
-    'wpfri_section_login',
+    'wpfri_settings',
     [
-      'id'    => 'custom_message',
-      'label' => __( 'Custom text and/or markup', 'wpfri' )
+      'id'    => 'wpfri_icons_to_display',
+      'label' => __( 'What icons you want to show your users?', 'wp-facebook-reaction-icons' )
     ]
   );
 
   add_settings_field(
-    'custom_footer',
-    __( 'Custom Footer', 'wpfri' ),
-    'wpfri_callback_field_text',
+    'wpfri_icons_size',
+    __( 'Reaction Icons Size', 'wp-facebook-reaction-icons' ),
+    'wpfri_callback_field_icon_sizes',
     'wpfri',
-    'wpfri_section_admin',
+    'wpfri_settings',
     [
-      'id'    => 'custom_footer',
-      'label' => __( 'Custom footer text', 'wpfri' )
-    ]
-  );
-
-  add_settings_field(
-    'custom_toolbar',
-    __( 'Custom Toolbar', 'wpfri' ),
-    'wpfri_callback_field_checkbox',
-    'wpfri',
-    'wpfri_section_admin',
-    [
-      'id'    => 'custom_toolbar',
-      'label' => __( 'Remove new post and comment links from the toolbar', 'wpfri' )
-    ]
-  );
-
-  add_settings_field(
-    'custom_scheme',
-    __( 'Custom Scheme', 'wpfri' ),
-    'wpfri_callback_field_select',
-    'wpfri',
-    'wpfri_section_admin',
-    [
-      'id'    => 'custom_scheme',
-      'label' => __( 'Default color scheme for new users', 'wpfri' )
+      'id'    => 'wpfri_icons_size',
+      'label' => __( 'What size of icons you want to apply?', 'wpfri' )
     ]
   );
 
