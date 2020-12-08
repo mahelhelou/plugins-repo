@@ -10,6 +10,10 @@ Plugin Name: Pluggable functions
  * Log the current user out.
  */
 
+/**
+ * You can rename the wp-readyfunctions' names
+ * Pluggable functions are extremely customizable
+ */
 function wp_logout() {
 	wp_destroy_current_session();
 	wp_clear_auth_cookie();
@@ -29,5 +33,6 @@ function myplugin_custom_logout() {
 
 }
 
+// Firing up the function once -> for one hook not for two
 // Because we called the plugin into copied one, no need for action
 // add_action( 'wp_logout', 'myplugin_custom_logout' );

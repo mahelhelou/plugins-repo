@@ -46,11 +46,9 @@ function explugin_validate_options( $input ) {
   if ( ! array_key_exists( $input['wpfri_icons_size'], $radio_options ) ) {
     $input['wpfri_icons_size'] = null;
   }
-
-  // custom message
-  if ( isset( $input['custom_message'] ) ) {
-    $input['custom_message'] = wp_kses_post( $input['custom_message'] );
-  }
+echo '111111111111111111111';
+  echo $input['wpfri_icons_to_display'];
+  exit;
 
   // custom footer
   if ( isset( $input['custom_footer'] ) ) {

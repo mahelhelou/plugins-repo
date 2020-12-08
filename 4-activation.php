@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Activation / Deactivate
+Plugin Name: Activation / Deactivate Hooks
 */
 
 // Do stuff on activation
@@ -21,7 +21,7 @@ function myplugin_on_deactivation() {
   // View a message on plugin deactivation
   // wp_die( 'Your plugin has been deactivated' );
 
-  flush_rewrite_rules();
+  flush_rewrite_rules(); // search?
 }
 
 register_deactivation_hook( __FILE__, 'myplugin_on_deactivation' );

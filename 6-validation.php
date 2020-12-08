@@ -3,6 +3,11 @@
 Plugin Name: Security of plugins
 */
 
+/**
+ * Data validation: check if the data are valid
+ * Data sanitization: checks if the data are safe
+ */
+
 // Validating phone number
 function myplugin_is_phone_number( $phone_number ) {
   // Check if empty

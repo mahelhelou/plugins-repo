@@ -3,12 +3,17 @@
 Plugin Name: Custom Loop Shortcode
 */
 
+/**
+ * Customize wordpress loop using this plugin
+ * Use $atts of posts_per_pages and orderby
+ */
+
 // Custom loop shortcode: get_posts_example
 function custom_loop_shortcode_get_posts( $atts ) {
   // get global post variable
   global $post;
 
-  // define shortcode variables
+  // define shortcode variables (default)
   extract( shortcode_atts( array(
     'posts_per_page'  => 5,
     'orderby'         => 'date'

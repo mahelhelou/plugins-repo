@@ -5,9 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // Display the plugin settings page
 function wpfri_display_settings_page() {
 
-  // check if user allowed to access
+  // check if user is allowed to access
   if ( ! current_user_can( 'manage_options' ) ) return;
-  ?>
+
+?>
 
   <div class="wrap">
     <h1><?php esc_html_e( 'WP Facebook Reaction Icons', 'wp-facebook-reaction-icons' ); ?></h1>
@@ -18,7 +19,7 @@ function wpfri_display_settings_page() {
       settings_fields( 'wpfri_options' );
 
       // output setting sections
-      do_settings_sections( 'wpfri' );
+      do_settings_sections( 'wp-facebook-reaction-icons' );
 
       // submit button
       submit_button();

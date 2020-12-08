@@ -16,7 +16,7 @@ function wpfri_register_settings() {
     'wpfri_settings',
     __( 'Facebook Reactions Settings', 'wp-facebook-reaction-icons' ),
     'wpfri_callback_section_settings',
-    'wpfri' // submenu slug
+    'wp-facebook-reaction-icons' // submenu slug
   );
 
   // All settings fields
@@ -24,7 +24,7 @@ function wpfri_register_settings() {
     'wpfri_status',
     __( 'Enable/Disable FB Reactions', 'wp-facebook-reaction-icons' ),
     'wpfri_callback_field_checkbox',
-    'wpfri',
+    'wp-facebook-reaction-icons',
     'wpfri_settings',
     [
       'id'    => 'wpfri_status',
@@ -36,7 +36,7 @@ function wpfri_register_settings() {
     'wpfri_reactions_position',
     __( 'Reactions Position', 'wp-facebook-reaction-icons' ),
     'wpfri_callback_field_radio',
-    'wpfri',
+    'wp-facebook-reaction-icons',
     'wpfri_settings',
     [
       'id'    => 'wpfri_reactions_position',
@@ -46,9 +46,9 @@ function wpfri_register_settings() {
 
   add_settings_field(
     'wpfri_icons_to_display',
-    __( 'Choose Reactions in Your Site', 'wp-facebook-reaction-icons' ),
-    'wpfri_callback_field_post_types',
-    'wpfri',
+    __( 'Reactions to Display', 'wp-facebook-reaction-icons' ),
+    'wpfri_callback_field_icon_displayed',
+    'wp-facebook-reaction-icons',
     'wpfri_settings',
     [
       'id'    => 'wpfri_icons_to_display',
@@ -60,11 +60,23 @@ function wpfri_register_settings() {
     'wpfri_icons_size',
     __( 'Reaction Icons Size', 'wp-facebook-reaction-icons' ),
     'wpfri_callback_field_icon_sizes',
-    'wpfri',
+    'wp-facebook-reaction-icons',
     'wpfri_settings',
     [
       'id'    => 'wpfri_icons_size',
-      'label' => __( 'What size of icons you want to apply?', 'wpfri' )
+      'label' => __( 'What size of icons you want to apply?', 'wp-facebook-reaction-icons' )
+    ]
+  );
+
+  add_settings_field(
+    'wpfri_apply_on',
+    __( 'Apply on', 'wp-facebook-reaction-icons' ),
+    'wpfri_callback_field_checkbox_cpts',
+    'wp-facebook-reaction-icons',
+    'wpfri_settings',
+    [
+      'id'    => 'wpfri_apply_on',
+      'label' => __( 'Choose where to apply WP Facebook Reaction Icons', 'wp-facebook-reaction-icons' )
     ]
   );
 
